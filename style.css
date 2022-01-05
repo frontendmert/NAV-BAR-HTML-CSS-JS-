@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.static-full-nav {
+    width: 100%;
+    height: 85px;
+    background: rgb(236, 236, 236);
+}
+
+.static-nav-bar {
+    width: 70%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.logo-css a{
+    color: rgb(17, 17, 17);
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    user-select: none;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list li {
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.nav-list a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: black;
+    bottom: 0;
+    left: 50%;
+    transition: 0.3s all;
+}
+
+.nav-list a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.static-button {
+    width: 100px;
+    height: 32px;
+    background: #e23566;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+.static-button:hover {
+    background: #ee638a;
+}
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger i {
+    font-size: 30px;
+}
+
+.close-nav {
+    display: none;
+    cursor: pointer;
+}
+
+.close-nav i {
+    font-size: 30px;
+}
+
+
+@media screen and (max-width:1048px) {
+    .burger {
+        display: block;
+    }
+
+    .close-nav {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+    }
+
+    .nav-list {
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+        background: rgb(235, 235, 235);
+        top: -1000px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.7s;
+
+    }
+    .nav-list li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .nav-list a {
+        font-size: 20px;
+    }
+
+}
